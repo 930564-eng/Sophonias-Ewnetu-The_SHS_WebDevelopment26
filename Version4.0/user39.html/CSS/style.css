@@ -1,3 +1,9 @@
+@import url(rainbow.css);
+
+#rainbow > *  { td:hover{ 
+  background-color: black;}
+}
+
 .buttonB {
 	background-color: #4CAF50;
 	border: none;
@@ -72,3 +78,25 @@ h1, h2, h3, h4, h5, h6{
 	background-color: grey;
     
 }
+
+#knowledge > * {
+  border: 3px red solid;
+}
+
+p + * {
+  background-color: #FFFF00;
+}
+
+ul > * {
+	color: red;
+}
+
+li * {
+	color: black;
+}
+
+div li::marker{
+  color: red;
+}
+
+
