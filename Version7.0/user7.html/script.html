@@ -28,6 +28,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
+    <script>
+function myFunctionHW() {
+    document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+<script>
+function myFunctionblur() {
+    const x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+}
+function displayDate() {
+document.getElementById("demo").innerHTML = Date();
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+
+function myFunction() {
+  alert("Open sesame!");
+}
+
+function myFunction() {
+  alert("You pressed a key inside the input field");
+}
+
+function confirmInput() {
+  fname = document.forms[0].fname.value;
+  alert("Hello " + fname + "! You will now be redirected to www.w3Schools.com");
+}
+
+function myFunction(x) {
+  x.style.background = "yellow";
+}
+
+</script>
 
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
@@ -79,6 +115,68 @@
             </div>
         </div>
     </main>
+    <h1>JavaScript HTML Events</h1>
+<h2>The onmouseover and onmouseout Attributes</h2>
+
+<h1 onmouseover="style.color='red'" onmouseout="style.color='black'">Mouse over this text</h1>
+<h1>JavaScript HTML Events</h1>
+<h2>The onclick Attribute</h2>
+
+<p>Click the button to trigger a function.</p>
+
+<button onclick="myFunctionHW()">Click me</button>
+
+<p id="demo"></p>
+<h2>The onblur Attribute</h2>
+
+Enter your name: <input type="text" id="fname" onblur="myFunctionblur()">
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+<h1>My First JavaScript</h1>
+<p id="demo">This is a paragraph.</p>
+
+<button type="button" onclick="displayDate()">Display Date</button>
+
+<h1>JavaScript HTML Events</h1>
+<h2>The ondblclick Attribute</h2>
+
+<body onload="myFunction()">
+<h1>JavaScript HTML Events</h1>
+<h2>The onload Attribute</h2>
+</body>
+
+
+
+<p ondblclick="myFunction()">Doubleclick this paragraph to trigger a function.</p>
+
+<p id="demo"></p>
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onkeypress Attribute</h2>
+
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+
+<input type="text" onkeypress="myFunction()">
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onsubmit Attribute</h2>
+
+<form onsubmit="confirmInput()" action="https://www.w3schools.com/">
+    Enter your name: <input id="fname" type="text" size="20">
+    <input type="submit">
+</form>
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onfocus Attribute</h2>
+
+Enter your name: <input type="text" onfocus="myFunction(this)">
+
+<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+
+</body>
+</html> 
+
     <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
 
 
@@ -89,6 +187,11 @@
         </p>
     </footer>
     <!---------------------------------- End the footer ------------->
-</body>
 
+
+</body>
 </html>
+
+
+
+
