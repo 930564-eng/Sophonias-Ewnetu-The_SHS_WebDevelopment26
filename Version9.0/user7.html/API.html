@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript API Project</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: lightblue;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            padding: 30px;
+        }
+
+        h1 {
+            color: #222;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Projects.html">Projects</a>
+    <a href="API.html">API</a>
+    <a href="Contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>My JavaScript API Project</h1>
+
+        <p>This website uses JavaScript events and API calls.</p>
+
+        <!-- BUTTON EVENT -->
+        <h2>Button Click Event</h2>
+
+        <button onclick="showMessage()">
+            Click Me
+        </button>
+
+        <p id="message"></p>
+
+        <!-- INPUT EVENT -->
+        <h2>Uppercase Input</h2>
+
+        <input type="text" id="nameInput" onblur="makeUppercase()" placeholder="Enter your name">
+
+        <!-- API SECTION -->
+        <h2>Pokemon API Viewer</h2>
+
+        <button onclick="getPokemon()">
+            Load Pokemon
+        </button>
+
+        <div class="card" id="pokemonCard">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // BUTTON FUNCTION
+        function showMessage() {
+
+            document.getElementById("message").innerHTML =
+                "You clicked the button!";
+        }
+
+        // INPUT FUNCTION
+        function makeUppercase() {
+
+            let input = document.getElementById("nameInput");
+
+            input.value = input.value.toUpperCase();
+        }
+
+        // API FUNCTION
+        async function getPokemon() {
+
+            let response =
+                await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+
+            let data = await response.json();
+
+            document.getElementById("pokemonCard").innerHTML = `
+            
+                <h3>${data.name.toUpperCase()}</h3>
+
+                <img src="${data.sprites.front_default}">
+
+                <p><strong>Height:</strong> ${data.height}</p>
+
+                <p><strong>Weight:</strong> ${data.weight}</p>
+
+                <p><strong>Base Experience:</strong> ${data.base_experience}</p>
+            `;
+        }
+
+    </script>
+
+</body>
+
+</html>

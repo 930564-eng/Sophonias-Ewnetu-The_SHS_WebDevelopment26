@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Version 5.0
+    Name:
+    Date Completed:
+-->
+
+<head>
+    <title>JavaScript</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SHS WebDev JavaScript Practice">
+
+    <!-- CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- JavaScript -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="JS/script.js"></script>
+    <script>
+function myFunctionHW() {
+    document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+<script>
+function myFunctionblur() {
+    const x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+}
+function displayDate() {
+document.getElementById("demo").innerHTML = Date();
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+
+function myFunction() {
+  alert("Open sesame!");
+}
+
+function myFunction() {
+  alert("You pressed a key inside the input field");
+}
+
+function confirmInput() {
+  fname = document.forms[0].fname.value;
+  alert("Hello " + fname + "! You will now be redirected to www.w3Schools.com");
+}
+
+function myFunction(x) {
+  x.style.background = "yellow";
+}
+
+</script>
+
+    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <!---------------------------------- Begin the nav-bar ------------->
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Projects.html">Projects</a>
+    <a href="API.html">API</a>
+    <a href="Contact.html">Contact</a>
+</nav>
+    <!---------------------------------- End the nav-bar ------------->
+
+    <main class="m-3" id="content">
+        <h1 class="text-left my-3">My JavaScript Examples</h1>
+        <!-- Edit this line for the title of your page -->
+        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
+                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+            </div>
+        </div>
+    </main>
+    <h1>JavaScript HTML Events</h1>
+
+<h1 onmouseover="style.color='red'" onmouseout="style.color='black'">Mouse over this text</h1>
+<h1>JavaScript HTML Events</h1>
+<h2>The onclick Attribute</h2>
+
+<p>Click the button to trigger a function.</p>
+
+<button onclick="myFunctionHW()">Click me</button>
+
+<p id="demo"></p>
+<h2>The onblur Attribute</h2>
+
+Enter your name: <input type="text" id="fname" onblur="myFunctionblur()">
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+<h1>My First JavaScript</h1>
+<p id="demo">This is a paragraph.</p>
+
+<button type="button" onclick="displayDate()">Display Date</button>
+
+
+
+<p ondblclick="myFunction()">Doubleclick this paragraph to trigger a function.</p>
+
+<p id="demo"></p>
+
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onsubmit Attribute</h2>
+
+<form onsubmit="confirmInput()" action="https://www.w3schools.com/">
+    Enter your name: <input id="fname" type="text" size="20">
+    <input type="submit">
+</form>
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onfocus Attribute</h2>
+
+Enter your name: <input type="text" onfocus="myFunction(this)">
+
+<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+
+</body>
+</html> 
+
+    <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
+
+
+    <!---------------------------------- Begin the footer ------------->
+    <footer class="small text-center" id="footer">
+        <p>
+            Webpage made by <a href="index.html" target="_blank">[Sophonias]</a>
+        </p>
+    </footer>
+    <!---------------------------------- End the footer ------------->
+
+
+</body>
+</html>
+
+
