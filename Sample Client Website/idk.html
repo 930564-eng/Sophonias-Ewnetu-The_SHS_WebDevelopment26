@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peaks Prehab Resources</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+        }
+
+        header{
+            background:linear-gradient(135deg,#f4a7d6,#8a4fff,#3dd9eb);
+            color:white;
+            text-align:center;
+            padding:60px;
+        }
+
+        header h1{
+            font-size:50px;
+            margin-bottom:10px;
+        }
+
+        header p{
+            font-size:22px;
+        }
+
+        nav{
+            background:white;
+            display:flex;
+            justify-content:center;
+            gap:40px;
+            padding:20px;
+            box-shadow:0 2px 5px rgba(0,0,0,.1);
+        }
+
+        nav a{
+            text-decoration:none;
+            color:black;
+            font-weight:bold;
+        }
+
+        .topics{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+            padding:40px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 5px 10px rgba(0,0,0,.1);
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h2{
+            margin-bottom:10px;
+            color:#8a4fff;
+        }
+
+        #search{
+            display:block;
+            margin:20px auto;
+            width:60%;
+            padding:12px;
+            font-size:18px;
+        }
+
+        #articles{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:20px;
+            padding:40px;
+        }
+
+        .article{
+            background:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 5px 10px rgba(0,0,0,.1);
+        }
+
+        .article h3{
+            color:#8a4fff;
+            margin-bottom:10px;
+        }
+
+        footer{
+            text-align:center;
+            background:#222;
+            color:white;
+            padding:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Peaks Prehab</h1>
+    <p>Find Your Balance. Reach Your Peak.</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Mental Health</a>
+    <a href="#">Nutrition</a>
+    <a href="#">Fitness</a>
+    <a href="#">Resources</a>
+</nav>
+
+<section class="topics">
+
+    <div class="card">
+        <h2>Mental Health</h2>
+        <p>Learn strategies for stress management, mindfulness, and emotional wellness.</p>
+    </div>
+
+    <div class="card">
+        <h2>Nutrition</h2>
+        <p>Explore healthy eating habits and nutrition resources.</p>
+    </div>
+
+    <div class="card">
+        <h2>Fitness</h2>
+        <p>Build strength, flexibility, and injury prevention techniques.</p>
+    </div>
+
+    <div class="card">
+        <h2>Recovery</h2>
+        <p>Discover recovery methods that improve performance and overall health.</p>
+    </div>
+
+</section>
+
+<h2 style="text-align:center;">Search Resources</h2>
+
+<input type="text" id="search" placeholder="Search health articles...">
+
+<h2 style="text-align:center;">Latest Health Articles</h2>
+
+<div id="articles"></div>
+
+<footer>
+    <p>© 2026 Peaks Prehab</p>
+</footer>
+
+<script>
+
+fetch("https://jsonplaceholder.typicode.com/posts?_limit=6")
+.then(response => response.json())
+.then(data => {
+
+    let articles = document.getElementById("articles");
+
+    data.forEach(post => {
+
+        articles.innerHTML += `
+            <div class="article">
+                <h3>${post.title}</h3>
+                <p>${post.body}</p>
+            </div>
+        `;
+    });
+
+});
+
+document.getElementById("search").addEventListener("keyup", function(){
+
+    let input = this.value.toLowerCase();
+    let articleCards = document.querySelectorAll(".article");
+
+    articleCards.forEach(card => {
+
+        let text = card.textContent.toLowerCase();
+
+        if(text.includes(input)){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
